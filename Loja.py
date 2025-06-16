@@ -29,7 +29,15 @@ def comprar_produto(nome, quantidade):
     for indice, conteudo in enumerate(nome_produto):
         print(f"ID: {indice + 1} \t Nome: {conteudo} \t Telefone: {preco_produto[indice]} \t CPF: {quantidade_produto[indice]}")
         
+        nome = input("Digite o ID do produto em que deseja comprar: ")
         
+        if nome not in nome_produto:
+            print("O produto que voce digitou nao existe...")
+        else:
+            print("Produto encontrado")
+            quantidade = int(input("Digite a quantidade em deseja comprar: "))
+            
+            quantidade_produto.append(quantidade)
     
 # Fim do Comprar Produto
 
