@@ -5,8 +5,8 @@ precos_produtos = []
 quantidades_produtos = []
 
 nome = str
-quantidade = 0
-preco = 0.0
+quantidade = int
+preco = float
 
 
 
@@ -144,7 +144,7 @@ def listar_clientes():
     else:
         print("\nLista de Clientes:")
         for indice, conteudo in enumerate(lista_clientes):
-            print(f"ID: {indice + 1}: {conteudo}")
+            print(f"ID {indice + 1}: {conteudo}")
 # Fim da funcao onde listamos clientes
 
 # Listar Produtos
@@ -160,6 +160,7 @@ def listar_produtos():
 # Buscar Produto
 # Deve retornar o produto encontrado ou None caso não exista
 def buscar_produto(nome):
+    nome = input("Digite o nome do produto: ")
     if nome not in nomes_produtos:
         print("Produto não encontrado.")
         return None
