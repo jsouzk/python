@@ -44,8 +44,8 @@ def cadastrar_produto(nome, quantidade, preco):
         
         preco = float(input("Digite o preço do produto: "))
         
-        if preco < 0:
-            print("Preço inválido. Por favor, insira um valor positivo.")
+        if preco <= 0:
+            print("Preço invalido, digite um valor acima de 0.")
             continue
         
         quantidade = int(input("Digite a quantidade do produto: "))
@@ -54,7 +54,8 @@ def cadastrar_produto(nome, quantidade, preco):
         precos_produtos.append(preco)
         quantidades_produtos.append(quantidade)
 
-        print(f"{nome} cadastrado com sucesso!")
+        print(f"{nome} cadastrado com sucesso no estoque")
+        print(f"Valor total: {quantidade * preco}")
         
         continuar = int(input("Deseja continuar? (1 - Sim / 2 - Nao): "))
         
@@ -121,6 +122,7 @@ def vender_produto(nome, quantidade):
                 
                 quantidades_produtos[indice] = quantidades_produtos[indice] - quantidade
                 print(f"{quantidade} unidades de {nome} vendidas com sucesso!")
+                print(f"Valor total: {quantidade * precos_produtos[indice]}")
                 return True
                 
         
@@ -135,8 +137,6 @@ def vender_produto(nome, quantidade):
             continue
 # Fim da funcao onde vendemos produtos
 
-# Listagem de Clientes e Produtos
-# Criar funções para exibir todos os dados cadastrados.
 # Listar Clientes
 def listar_clientes():
     if not lista_clientes:
@@ -171,7 +171,6 @@ def buscar_produto(nome):
 # Fim da funcao onde buscamos produtos
 
 # Menu interativo
-# Criar um sistema de interação contínua com o usuário.
 def menu():
     while True:
         print("\n ----- Menu da Loja -----")
