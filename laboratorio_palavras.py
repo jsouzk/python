@@ -1,4 +1,5 @@
 string = []
+
 # Transformaçao de caixa
 def deixar_maiuscula(f):
     print(f.upper())
@@ -38,12 +39,33 @@ def menu_tranformacao_de_caixa():
         else:
             print("Opção Invalida")
 # Fim da transformação de caixa
+def contagem(a):
+    letra = input("Digite uma letra: ")
+    print(f"Há {a.count(letra)} letras '{letra}' na frase/palavra que você escreveu.")
 
-def menu_fatiamento_inversao():
+def encontrar_posicao(a):
+    letra = input("Digite uma letra que deseja encontrar: ")
+    posicao = a.find(letra)
+    print(f"A letra {letra} se encontra na posição {posicao} do vetor de caracteres.")
+
+def menu_contagens_busca():
     algo = input("Digite algo: ")
     while True:
-        print("1 - Fatiamento")
+        print("1 - Contagem de caractere")
+        print("2 - Encontrar posição de certo caractere")
+        print("0 - Sair")
+
+        op = int(input("Digite uma das opções acima: "))
         
+        if op == 1:
+            contagem(algo)
+        elif op == 2:
+            encontrar_posicao(algo)
+        elif op == 0:
+            print("Saindo...")
+            break
+        else:
+            print("Opção Invalida")
 
 def menu():
     while True:
@@ -72,7 +94,7 @@ def menu():
             print("dwsd")
         elif escolha == 7:
             print("ddw")
-        elif escolha == 8:
+        elif escolha == 0:
             print("Saindo...")
             break
         else:
