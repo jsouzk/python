@@ -135,19 +135,19 @@ def eliminar_espacos(a):
     print(f"Sem espaços extras: {a.strip()}")
     
 def eliminar_letras(a):
-    remover_letra = input("Digite a letra que deseja remover: ")
+    remover_letra = input("Digite a letra que deseja remover: ").lower()
     
     print(a.replace(remover_letra, ""))
     
 def trocar_caractere(a):
-    letra_substituir = input("Digite a letra que deseja substituir: ")
+    letra_substituir = input("Digite a letra que deseja substituir: ").lower()
     letra_substituta = input("Digite a letra que deseja colocar no lugar: ")
     
     print(a.replace(letra_substituir, letra_substituta))
     
 def menu_substituicoes_remocoes():
     
-    algo = input("Digite algo: ")
+    algo = input("Digite algo: ").lower()
     
     while True:
         print("\n1 - Trocar caractere")
